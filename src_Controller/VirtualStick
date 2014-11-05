@@ -19,6 +19,7 @@ self.releasedCallback = args.released or doNothing
 self.steerCallback = args.moved or doNothing
 self.pressedCallback = args.pressed or doNothing
 end
+
 function VirtualStick:touched(t)
 local pos = touchPos(t)
 if t.state == BEGAN and self.touchId == nil then
