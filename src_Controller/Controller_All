@@ -9,6 +9,7 @@ function AllController:init(controllers)
 self.controllers = controllers
 end
 
+
 function AllController:touched(t)
 for _, c in pairs(self.controllers) do
 c:touched(t)
