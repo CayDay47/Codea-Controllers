@@ -1,0 +1,43 @@
+--- Functions
+
+-- Controller functions
+
+function touchPos(t)
+return vec2(t.x, t.y)
+end
+
+function clamp(x, min, max)
+return math.max(min, math.min(max, x))
+end
+
+function clampAbs(x, maxAbs)
+return clamp(x, -maxAbs, maxAbs)
+end
+
+function clampLen(vec, maxLen)
+if vec == vec2(0,0) then
+return vec
+else
+return vec:normalize() * math.min(vec:len(), maxLen)
+end
+end
+
+-- projects v onto the direction represented by the given unit vector
+function project(v, unit)
+return v:dot(unit)
+end
+
+function sign(x)
+if x == 0 then
+return 0
+elseif x < 0 then
+return -1
+elseif x > 0 then
+return 1
+else
+return x -- x is NaN
+end
+end
+
+function doNothing()
+end
