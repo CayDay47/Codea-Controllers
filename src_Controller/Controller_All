@@ -1,0 +1,22 @@
+--- Controller_All
+
+-- Forwards each touch event to all the controllers in the table
+-- passed to the constructor
+
+AllController = class(Controller)
+
+function AllController:init(controllers)
+self.controllers = controllers
+end
+
+function AllController:touched(t)
+for _, c in pairs(self.controllers) do
+c:touched(t)
+end
+end
+
+function AllController:draw()
+for _, c in pairs(self.controllers) do
+c:draw()
+end
+end
